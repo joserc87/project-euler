@@ -1,0 +1,7 @@
+#!/usr/bin/python
+hola = "hola"
+
+denominador=2
+while denominador<100:
+    print 1/denominador
+

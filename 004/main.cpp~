@@ -1,0 +1,11 @@
+#include <iostream>
+
+using namespace std;
+
+bool esPalindromo (int num){
+  int numDigitos = log10 ((float)num)
+}
+
+int main (){
+  
+}

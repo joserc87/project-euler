@@ -1,0 +1,9 @@
+#include <iostream>
+
+using namespace std;
+
+long int longChain (int n){
+  while (n!=1){
+    n=(n%2==0?n/2:3*n+1);
+  }
+}

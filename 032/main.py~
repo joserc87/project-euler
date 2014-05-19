@@ -1,0 +1,35 @@
+#!/usr/bin/python
+
+def getDigitos (n):
+    digitos=[]
+    while n>0:
+        digitos.append (n%10)
+        n/=10
+    return digitos
+
+def todos (digitos):
+    if len (digitos)!=9:
+        return False
+    estanTodos=True
+    for i in range(1:9):
+        if not i in digitos:
+            estanTodos=False
+    return estanTodos
+
+def pandigital (a, b):
+    c = a*b
+    digiA = getDigitos (a)
+    digiB = getDigitos (b)
+    digiC = getDigitos (c)
+    digitos = digiA+digiB+digiC
+    if todos (digitos):
+        return True
+    else:
+        return False
+    
+
+#main
+a=1
+b=1
+while a<sqrt(987654321)//1:
+    while a*b<987654321: # Restar los dígitos de a y b

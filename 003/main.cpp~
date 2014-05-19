@@ -1,0 +1,16 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main (){
+  const int number = 600851475143;
+  list <int> primos;
+  for (int i=2; i<=sqrt (number); i++){
+    bool esPrimo=true;
+    for (list <int>::const_iterator iter = primos.begin (); iter != primos.end () && esPrimo; iter ++){
+      if (i%(*iter)==0)
+	esPrimo=false;
+    }
+  }
+}

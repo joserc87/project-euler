@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int numLetras (int num){
+  int decimal [13]={
+    0, //Nada
+    3, // ONE
+    3, // TWO
+    5, // THREE
+    4, // FOUR
+    4, // FIVE
+    3, // SIX
+    5, // SEVEN
+    5, // EIGHT
+    4, // NINE
+    3, // TEN
+    6, // ELEVEN
+    6, // TWELVE
+  }
+}
+
+int main (){
+}
