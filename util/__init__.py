@@ -1,22 +1,36 @@
 
 import math
 
+
+def get_digits(num, base=10):
+    """Transforms an int into a list of integers with the digits in an arbitrary
+    base"""
+    digits = []
+    while num > 0:
+        digits.append(num % base)
+        num = num//base
+    return digits[::-1]
+
+
+def get_int_from_digits(digits, base=10):
+    n = 0
+    for digit in digits:
+        n *= base
+        n += digit
+    return n
+
+
+def is_palindromic(num, base=10):
+    """Check if a number is palindromic in an arbitrary base (the number has no
+    leading zeros)"""
+    digits = get_digits(num, base)
+    return digits == digits[::-1]
+
+
 class Util:
 	""" A common set of methods to help solve all the euler problems """
 
 	# TODO: Store things like lists of primes
-
-
-	######################################################################
-
-	def getDigits(self, num, base):
-		""" Returns a list of int with all the digits of a number (using an arbitrary base) """
-		digits = []
-		while num > 0:
-			dig = num%base
-			digits.append(dig)
-			num = num//base
-		return digits
 
 	######################################################################
 
@@ -30,18 +44,6 @@ class Util:
 
 	######################################################################
 
-	def isPalindromic (self, num, base):
-		""" Check if a number is palindromic in a base (the number has no leading zeros) """
-		digits = Util.getDigits(num, base)
-		pal = True
-		for d in reversed(digits):
-			lastDig = num%base
-			if d != lastDig:
-				pal = False
-				break
-			num//=base
-
-		return pal
 
 	######################################################################
 
