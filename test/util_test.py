@@ -1,5 +1,5 @@
 import unittest
-from util import get_digits, get_int_from_digits, is_palindromic
+from util import get_digits, get_int_from_digits, is_palindromic, get_rotations
 
 
 class TestDigitMethods(unittest.TestCase):
@@ -25,6 +25,15 @@ class TestDigitMethods(unittest.TestCase):
         self.assertTrue(is_palindromic(123321, 10))
         self.assertTrue(is_palindromic(0b101101101, 2))
         self.assertTrue(is_palindromic(0b10111101, 2))
+
+    def test_get_rotations(self):
+        self.assertEqual(
+            get_rotations(1234),
+            [1234, 4123, 3412, 2341])
+        self.assertEqual(
+            get_rotations(0b10110011, 2),
+            [0b10110011, 0b11011001, 0b11101100, 0b01110110,
+             0b00111011, 0b10011101, 0b11001110, 0b01100111])
 
 
 if __name__ == '__main__':
