@@ -125,6 +125,9 @@ class PrimeFactory:
         self._calc_primes(n)
         return n in self.primes
 
+    def __contains__(self, n):
+        return self.is_prime(n)
+
     def firstNonPrime (self, a, b):
         n = 1
         stop = False

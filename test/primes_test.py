@@ -20,5 +20,15 @@ class TestPrimeFactory(unittest.TestCase):
         self.assertTrue(primes.is_prime(13))
         self.assertTrue(primes.is_prime(17))
 
+    def test_contains(self):
+        primes = PrimeFactory()
+        self.assertTrue(2 in primes)
+        self.assertTrue(3 in primes)
+        self.assertTrue(5 in primes)
+        self.assertTrue(7 in primes)
+        self.assertTrue(11 in primes)
+        self.assertTrue(13 in primes)
+        self.assertTrue(17 in primes)
+
 if __name__ == '__main__':
     unittest.main()
