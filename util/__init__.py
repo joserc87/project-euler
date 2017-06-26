@@ -108,19 +108,6 @@ class PrimeFactory:
             self.last_number_checked = until
         return change
 
-    def primeDivisors(self, n):
-        divisors=[]
-        change=True
-        while change and n!=1:
-            for iter in self.primes:
-                if n==1:
-                    break
-                while n%iter==0:
-                    divisors.append(iter)
-                    n/=iter
-                cambia=self._calc_primes(n)
-        return divisors
-
     def is_prime(self, n):
         self._calc_primes(n)
         return n in self.primes
@@ -138,3 +125,18 @@ class PrimeFactory:
             else:
                 stop = True
         return n
+
+    def get_prime_factors(self, n):
+        factors = []
+        i = 0
+        self._calc_primes(n)
+        for prime in self.primes:
+            if n == 1:
+                break
+            times = 0
+            while n % prime == 0:
+                n /= prime
+                times += 1
+            if times > 0:
+                factors.append((prime, times))
+        return factors

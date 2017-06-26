@@ -30,5 +30,15 @@ class TestPrimeFactory(unittest.TestCase):
         self.assertTrue(13 in primes)
         self.assertTrue(17 in primes)
 
+    def test_get_prime_factors(self):
+        primes = PrimeFactory()
+        self.assertEquals([(2, 2), (7, 1), (23, 1)],
+                          primes.get_prime_factors(644))
+        self.assertEquals([(3, 1), (5, 1), (43, 1)],
+                          primes.get_prime_factors(645))
+        self.assertEquals([(2, 1), (17, 1), (19, 1)],
+                          primes.get_prime_factors(646))
+
+
 if __name__ == '__main__':
     unittest.main()
